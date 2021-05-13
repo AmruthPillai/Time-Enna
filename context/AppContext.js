@@ -130,7 +130,8 @@ export const AppProvider = ({ children }) => {
     });
 
     // Get local storage config on page load and add timezones, if available
-    const localStoreTimezones = JSON.parse(localStorage.getItem('timezones'));
+    const localStoreTimezones =
+      JSON.parse(localStorage.getItem('timezones')) || [];
     localStoreTimezones.forEach(timezone => {
       dispatch({
         type: ADD_TIMEZONE,
