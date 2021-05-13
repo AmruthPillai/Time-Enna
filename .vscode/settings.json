@@ -5,8 +5,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": [
-    "javascript"
-  ],
-  "javascript.validate.enable": false
+  "eslint.validate": ["javascript"],
+  "javascript.validate.enable": false,
+  "eslint.workingDirectories": ["{YOUR_FOLDER}"]
 }

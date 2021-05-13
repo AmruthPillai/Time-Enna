@@ -16,12 +16,7 @@ module.exports = {
       version: 'detect'
     }
   },
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'airbnb',
-    'prettier'
-  ],
+  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', 'airbnb', 'prettier'],
   plugins: ['react', 'prettier', 'simple-import-sort'],
   rules: {
     'no-return-assign': 'off',

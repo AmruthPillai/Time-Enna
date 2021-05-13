@@ -1,3 +1,3 @@
 .container {
-  @apply flex flex-col m-6;
+  @apply flex flex-col m-4 md:m-6 lg:m-8;
 }

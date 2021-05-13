@@ -1,23 +1,10 @@
 import cx from 'classnames';
 
 import styles from '../styles/Button.module.css';
+import { handleKeyPress } from '../utils';
 
-const Button = ({
-  icon,
-  children,
-  thin = false,
-  tooltip,
-  ariaLabel,
-  className,
-  onClick
-}) => {
+const Button = ({ icon, children, thin = false, tooltip, ariaLabel, className, onClick }) => {
   const Icon = icon;
-
-  const onKeyPress = e => {
-    if (e.key === 'Enter') {
-      onClick();
-    }
-  };
 
   return (
     <button
@@ -26,7 +13,7 @@ const Button = ({
       onClick={onClick}
       data-tip={tooltip}
       aria-label={ariaLabel}
-      onKeyPress={onKeyPress}
+      onKeyPress={e => handleKeyPress(e, onClick)}
       className={cx(styles.button, { [styles.thin]: thin }, className)}
     >
       {icon && <Icon />}
