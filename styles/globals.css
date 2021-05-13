@@ -36,3 +36,7 @@ a:hover {
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+
+.react-transform-component {
+  overflow: initial !important;
+}

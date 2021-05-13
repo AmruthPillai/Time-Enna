@@ -1,0 +1,23 @@
+.display {
+  @apply flex items-center justify-between lg:flex-col lg:items-start;
+}
+
+.display > .left {
+  @apply py-4 col-span-1 lg:col-span-1;
+}
+
+.display > .left > h1 {
+  @apply text-sm;
+}
+
+.display > .left > h2 {
+  @apply flex items-center text-2xl font-bold;
+}
+
+.display > .left > h2 > svg {
+  @apply ml-2 text-sm opacity-60;
+}
+
+.display > .left > h3 {
+  @apply text-xs font-bold;
+}

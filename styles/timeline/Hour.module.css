@@ -1,0 +1,51 @@
+.hour {
+  @apply h-7 bg-gray-600 text-xs flex items-center justify-center;
+}
+
+.hour:nth-child(2n) {
+  @apply bg-gray-700;
+}
+
+.hour:nth-child(24n + 1) {
+  @apply h-7 bg-green-600;
+}
+
+.hour.current {
+  @apply bg-yellow-400 text-gray-900 relative !important;
+}
+
+.hour.current::before {
+  content: '';
+  @apply border-l py-8 absolute left-0;
+}
+
+.hour.business {
+  @apply bg-blue-800 relative;
+}
+
+.hour.business:nth-child(24n + 11)::before {
+  content: '';
+  @apply border-l py-8 absolute left-0;
+}
+
+.hour.business:nth-child(24n + 19)::after {
+  content: '';
+  @apply border-r py-8 absolute right-0;
+}
+
+.hour.business:nth-child(2n) {
+  @apply bg-blue-900;
+}
+
+.hour.current .label,
+.hour.business .label {
+  top: -18px;
+  left: 6px;
+  @apply absolute text-gray-100;
+}
+
+.hour.business .labelAlt {
+  top: -18px;
+  right: 6px;
+  @apply absolute text-gray-100;
+}

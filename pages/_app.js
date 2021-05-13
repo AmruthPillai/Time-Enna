@@ -5,8 +5,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { Slide, ToastContainer } from 'react-toastify';
-
-import { AppProvider } from '../context/AppContext';
+import { RecoilRoot } from 'recoil';
 
 const ReactTooltip = dynamic(() => import('react-tooltip'), { ssr: false });
 
@@ -25,9 +24,9 @@ const MyApp = ({ Component, pageProps }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <AppProvider>
+    <RecoilRoot>
       <Component {...pageProps} />
-    </AppProvider>
+    </RecoilRoot>
 
     <ReactTooltip />
     <ToastContainer

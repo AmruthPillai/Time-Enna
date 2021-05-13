@@ -1,30 +1,31 @@
 import cx from 'classnames';
-import { useContext, useState } from 'react';
 import { BiReset } from 'react-icons/bi';
 import { MdAlarmAdd, MdInfoOutline } from 'react-icons/md';
 import { Ri24HoursFill } from 'react-icons/ri';
+import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 
+import {
+  aboutModalOpenState,
+  addTimezoneModalState,
+  cursorTimestampState,
+  is24HourState,
+  timezonesState
+} from '../atoms';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
-import Timezone from '../components/Timezone';
-import {
-  RESET_CURSOR_TO_CURRENT,
-  TOGGLE_24_HOUR_DISPLAY
-} from '../config/actions';
-import { AppContext } from '../context/AppContext';
+import Timeline from '../components/Timeline';
 import AboutTimeEnna from '../modals/AboutTimeEnna';
 import AddTimezoneModal from '../modals/AddTimezone';
 import styles from '../styles/Home.module.css';
 
 const Home = () => {
-  const [isAboutModalOpen, setAboutModalOpen] = useState(false);
-  const [isAddTimezoneModalOpen, setAddTimezoneModalOpen] = useState(false);
+  const [is24Hour, set24Hour] = useRecoilState(is24HourState);
+  const toggle24Hour = () => set24Hour(!is24Hour);
 
-  const { state, dispatch } = useContext(AppContext);
-  const { timezones } = state;
-
-  const onToggle24Hour = () => dispatch({ type: TOGGLE_24_HOUR_DISPLAY });
-  const onResetTime = () => dispatch({ type: RESET_CURSOR_TO_CURRENT });
+  const timezones = useRecoilValue(timezonesState);
+  const setAboutModalOpen = useSetRecoilState(aboutModalOpenState);
+  const setAddTimezoneModalOpen = useSetRecoilState(addTimezoneModalState);
+  const resetCursorTimestamp = useResetRecoilState(cursorTimestampState);
 
   return (
     <div className={cx(styles.container)}>
@@ -36,7 +37,7 @@ const Home = () => {
             thin
             className="ml-2"
             icon={BiReset}
-            onClick={onResetTime}
+            onClick={resetCursorTimestamp}
             ariaLabel="Reset to Current Time"
             tooltip="Reset to Current Time"
           />
@@ -44,7 +45,7 @@ const Home = () => {
             thin
             className="ml-2"
             icon={Ri24HoursFill}
-            onClick={onToggle24Hour}
+            onClick={toggle24Hour}
             ariaLabel="Toggle 24 Hour Display"
             tooltip="Toggle 24 Hour Display"
           />
@@ -56,27 +57,21 @@ const Home = () => {
             ariaLabel="About Time Enna"
             tooltip="About Time Enna"
           />
-          <AboutTimeEnna
-            isOpen={isAboutModalOpen}
-            setOpen={setAboutModalOpen}
-          />
         </div>
       </div>
 
-      {timezones.map(({ id, ref, timezone }) => (
-        <Timezone key={id} id={id} timezone={timezone} sliderRef={ref} />
+      {timezones.map(timezone => (
+        <Timeline key={timezone} timezone={timezone} />
       ))}
 
-      <div className="mt-8">
+      <div className="mt-12">
         <Button icon={MdAlarmAdd} onClick={() => setAddTimezoneModalOpen(true)}>
           Add Timezone
         </Button>
-
-        <AddTimezoneModal
-          isOpen={isAddTimezoneModalOpen}
-          setOpen={setAddTimezoneModalOpen}
-        />
       </div>
+
+      <AboutTimeEnna />
+      <AddTimezoneModal />
     </div>
   );
 };

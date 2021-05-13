@@ -9,16 +9,12 @@ import {
 
 import { timePixelMap } from '../config';
 
-export const epochToTimestamp = date => {
-  const dateString = format(date, 'MMMM d, yyyy');
-  const hours = getHours(date);
-  const minutes = getMinutes(date);
+export const epochToTimestamp = dateObj => {
+  const date = format(dateObj, 'MMMM d, yyyy');
+  const hours = getHours(dateObj);
+  const minutes = getMinutes(dateObj);
 
-  return {
-    date: dateString,
-    hours,
-    minutes
-  };
+  return { date, hours, minutes };
 };
 
 export const getAMPM = hours => (hours < 12 ? 'AM' : 'PM');
@@ -40,7 +36,12 @@ export const pixelsToTimestamp = (pixels, startDate) => {
   return addMinutes(startDate, minutes);
 };
 
-export const getHoursFromStartToEnd = (start, end) =>
-  eachHourOfInterval({ start, end });
+export const getHoursFromStartToEnd = (start, end) => eachHourOfInterval({ start, end });
 
 export const openLinkInNewTab = url => window.open(url, '_blank').focus();
+
+export const handleKeyPress = (event, callback) => {
+  if (event.code === 'Enter' || event.code === 'Space') {
+    callback();
+  }
+};
