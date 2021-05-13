@@ -43,8 +43,8 @@ const AboutTimeEnna = ({ isOpen, setOpen }) => (
         <strong>What&apos;s up with the name?</strong>
         <br />
         &quot;Time Enna?&quot; is a phrase in Tamil (my native toungue) that
-        just translates to &quot;What time is it?&quot;. I was sleep-deproved
-        when I came up with the name, so don&apos;t judge for it.
+        just translates to &quot;What time is it?&quot;. I was sleep-deprived
+        when I came up with the name, so don&apos;t judge me for it.
       </p>
       <p>
         <strong>Why did I build this?</strong>
