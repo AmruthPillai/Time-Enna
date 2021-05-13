@@ -1,0 +1,23 @@
+.logo {
+  width: 246px;
+  height: 48px;
+  @apply cursor-pointer overflow-x-hidden;
+}
+
+.logo img {
+  margin-left: -62px;
+  @apply transition-all;
+}
+
+.logo:hover img {
+  @apply ml-0 transition-all;
+}
+
+.logo.noAnimation img {
+  @apply ml-0 cursor-auto;
+}
+
+.logo.small {
+  width: 196.8px;
+  height: 38.4px;
+}

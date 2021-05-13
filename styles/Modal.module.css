@@ -1,0 +1,18 @@
+.modal {
+  background-color: #121212;
+  -webkit-overflow-scrolling: touch;
+  @apply absolute inset-8 overflow-x-hidden overflow-y-auto rounded p-8 outline-none focus:outline-none;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  @apply fixed inset-0;
+}
+
+button.close {
+  @apply absolute top-4 right-4;
+}
+
+button.close > svg {
+  @apply text-xl;
+}

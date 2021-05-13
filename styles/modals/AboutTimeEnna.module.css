@@ -1,0 +1,15 @@
+.modal {
+  @apply xl:w-2/3 md:mx-auto;
+}
+
+.container {
+  @apply w-full md:w-4/5 mt-6 md:mt-0 text-sm text-justify leading-loose;
+}
+
+.container > p {
+  @apply mb-4;
+}
+
+.footer {
+  @apply mt-6 flex gap-x-6;
+}

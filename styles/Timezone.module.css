@@ -1,0 +1,75 @@
+.timezone {
+  @apply mt-4 grid grid-cols-1 lg:grid-cols-6;
+}
+
+.display {
+  @apply flex items-center justify-between lg:flex-col lg:items-start;
+}
+
+.display > .left {
+  @apply py-4 col-span-1 lg:col-span-1;
+}
+
+.display > .left > h4 {
+  @apply text-sm;
+}
+
+.display > .left > h2 {
+  @apply flex items-center text-2xl font-bold;
+}
+
+.display > .left > h2 > svg {
+  @apply ml-2 text-sm opacity-60;
+}
+
+.display > .left > h6 {
+  @apply text-xs font-bold;
+}
+
+.display > .right {
+}
+
+.scroller {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  @apply col-span-1 lg:col-span-5 py-4 border-l border-gray-500 flex items-center overflow-y-auto;
+}
+
+.scroller::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.hour {
+  @apply h-6 bg-gray-600 text-xs flex items-center justify-center;
+}
+
+.hour:nth-child(2n) {
+  @apply bg-gray-700;
+}
+
+.hour:nth-child(24n + 1) {
+  @apply bg-green-600 py-6;
+}
+
+.hour.current {
+  @apply bg-yellow-400 text-gray-900 relative !important;
+}
+
+.hour.current::before {
+  content: '';
+  @apply border-l py-8 absolute left-0;
+}
+
+.hour.business {
+  @apply bg-blue-800;
+}
+
+.hour.business:nth-child(2n) {
+  @apply bg-blue-900;
+}
+
+.hour.current .label {
+  top: -18px;
+  left: 6px;
+  @apply absolute text-gray-100;
+}

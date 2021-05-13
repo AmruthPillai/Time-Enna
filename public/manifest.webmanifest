@@ -1,0 +1,32 @@
+{
+  "theme_color": "#111111",
+  "background_color": "#111111",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Time Enna",
+  "short_name": "Time Enna",
+  "description": "Time Enna is an app to help you look up the time across multiple timezones, a simple but helpful utility for the remote world.",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+.button {
+  @apply relative flex bg-gray-700 px-4 py-2 text-sm rounded-sm hover:bg-gray-600 focus:bg-gray-600 focus:outline-none;
+}
+
+.button.thin {
+  @apply py-0 px-1 bg-transparent hover:bg-transparent focus:bg-transparent;
+}
+
+.button > svg {
+  @apply text-lg leading-5;
+}
+
+.button > span {
+  @apply ml-2 leading-5 text-left;
+}
+
+.button:active {
+  @apply transform scale-95;
+}
