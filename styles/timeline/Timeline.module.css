@@ -3,5 +3,5 @@
 }
 
 .scroller {
-  @apply py-8 border-l border-gray-500 overflow-hidden;
+  @apply col-span-1 lg:col-span-5 flex items-center border-l border-gray-500 cursor-move overflow-hidden;
 }
