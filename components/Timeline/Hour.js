@@ -28,7 +28,7 @@ const Hour = ({ date, currentZonedTime }) => {
     >
       {isCurrentHour && <span className={cx(styles.label)}>Current Time</span>}
       {isStartOfWorkDay && <span className={cx(styles.label)}>Start of Work Day</span>}
-      {isEndOfWorkDay && <span className={cx(styles.labelAlt)}>End of Work Day</span>}
+      {isEndOfWorkDay && <span className={cx(styles.label, styles.alt)}>End of Work Day</span>}
       {isNewDay && `${readableDate}, `}
       {readableHour}
     </div>

@@ -1,5 +1,5 @@
 .display {
-  @apply flex items-center justify-between lg:flex-col lg:items-start;
+  @apply flex items-center justify-between lg:flex-col lg:items-start xl:flex-row xl:items-center xl:mr-4;
 }
 
 .display > .left {

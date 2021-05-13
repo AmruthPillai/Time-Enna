@@ -46,6 +46,7 @@ const Timeline = ({ timezone }) => {
           onPanning={handleScroll}
           pan={{ lockAxisY: true }}
           wheel={{ disabled: true }}
+          doubleClick={{ disabled: true }}
           options={{ limitToBounds: false }}
           defaultPositionX={-Math.abs(timestampToPixels(zonedTime, startDate))}
         >

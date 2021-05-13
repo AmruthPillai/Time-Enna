@@ -23,6 +23,10 @@
   @apply bg-blue-800 relative;
 }
 
+.hour.business:nth-child(2n) {
+  @apply bg-blue-900;
+}
+
 .hour.business:nth-child(24n + 11)::before {
   content: '';
   @apply border-l py-8 absolute left-0;
@@ -33,19 +37,13 @@
   @apply border-r py-8 absolute right-0;
 }
 
-.hour.business:nth-child(2n) {
-  @apply bg-blue-900;
-}
-
-.hour.current .label,
-.hour.business .label {
+.hour .label {
   top: -18px;
   left: 6px;
   @apply absolute text-gray-100;
 }
 
-.hour.business .labelAlt {
-  top: -18px;
+.hour .label.alt {
+  left: auto;
   right: 6px;
-  @apply absolute text-gray-100;
 }
