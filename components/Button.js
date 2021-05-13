@@ -7,6 +7,7 @@ const Button = ({
   children,
   thin = false,
   tooltip,
+  ariaLabel,
   className,
   onClick
 }) => {
@@ -24,6 +25,7 @@ const Button = ({
       type="button"
       onClick={onClick}
       data-tip={tooltip}
+      aria-label={ariaLabel}
       onKeyPress={onKeyPress}
       className={cx(styles.button, { [styles.thin]: thin }, className)}
     >

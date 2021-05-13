@@ -37,6 +37,7 @@ const Home = () => {
             className="ml-2"
             icon={BiReset}
             onClick={onResetTime}
+            ariaLabel="Reset to Current Time"
             tooltip="Reset to Current Time"
           />
           <Button
@@ -44,6 +45,7 @@ const Home = () => {
             className="ml-2"
             icon={Ri24HoursFill}
             onClick={onToggle24Hour}
+            ariaLabel="Toggle 24 Hour Display"
             tooltip="Toggle 24 Hour Display"
           />
           <Button
@@ -51,7 +53,8 @@ const Home = () => {
             className="ml-2"
             icon={MdInfoOutline}
             onClick={() => setAboutModalOpen(true)}
-            tooltip="About Time:Enna"
+            ariaLabel="About Time Enna"
+            tooltip="About Time Enna"
           />
           <AboutTimeEnna
             isOpen={isAboutModalOpen}

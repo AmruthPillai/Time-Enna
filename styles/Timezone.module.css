@@ -10,7 +10,7 @@
   @apply py-4 col-span-1 lg:col-span-1;
 }
 
-.display > .left > h4 {
+.display > .left > h1 {
   @apply text-sm;
 }
 
@@ -22,7 +22,7 @@
   @apply ml-2 text-sm opacity-60;
 }
 
-.display > .left > h6 {
+.display > .left > h3 {
   @apply text-xs font-bold;
 }
 

@@ -9,7 +9,12 @@ const Logo = ({ small, disableAnimation }) => (
       [styles.noAnimation]: disableAnimation
     })}
   >
-    <img src="/images/logo.svg" alt="Time Enna - Timezone Converter - Logo" />
+    <img
+      width="246px"
+      height="48px"
+      src="/images/logo.svg"
+      alt="Time Enna - Timezone Converter - Logo"
+    />
   </div>
 );
 

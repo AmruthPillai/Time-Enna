@@ -58,7 +58,7 @@ const Timezone = ({ id, timezone, sliderRef }) => {
     return (
       <div className={cx(styles.display)}>
         <div className={cx(styles.left)}>
-          <h4>{timezone}</h4>
+          <h1>{timezone}</h1>
           <h2>
             {is24Hour
               ? `${format(zonedTime, 'HH')}:${format(zonedTime, 'mm')}`
@@ -68,7 +68,7 @@ const Timezone = ({ id, timezone, sliderRef }) => {
                 )}`}
             {isNight && <BsMoon />}
           </h2>
-          <h6>{epochToTimestamp(zonedTime).date}</h6>
+          <h3>{epochToTimestamp(zonedTime).date}</h3>
         </div>
 
         <div className={cx(styles.right)}>
@@ -77,6 +77,7 @@ const Timezone = ({ id, timezone, sliderRef }) => {
             icon={AiOutlineDelete}
             tooltip="Delete Timezone"
             onClick={onDeleteTimezone}
+            ariaLabel="Delete Timezone"
             className="text-red-600"
           />
         </div>
