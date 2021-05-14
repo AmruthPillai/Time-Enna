@@ -5,13 +5,13 @@ import ReactModal from 'react-modal';
 import styles from '../styles/Modal.module.css';
 import Button from './Button';
 
-const Modal = ({ isOpen, onClose, children, className }) => (
+const Modal = ({ isOpen, onClose, children, className, overlayClassName }) => (
   <ReactModal
     isOpen={isOpen}
     ariaHideApp={false}
     closeTimeoutMS={150}
     className={cx(styles.modal, className)}
-    overlayClassName={cx(styles.overlay)}
+    overlayClassName={cx(styles.overlay, overlayClassName)}
     onRequestClose={onClose}
   >
     <Button

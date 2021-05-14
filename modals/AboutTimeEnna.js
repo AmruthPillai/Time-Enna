@@ -13,7 +13,12 @@ const AboutTimeEnna = () => {
   const [isOpen, setOpen] = useRecoilState(aboutModalOpenState);
 
   return (
-    <Modal isOpen={isOpen} onClose={() => setOpen(false)} className={styles.modal}>
+    <Modal
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      className={styles.modal}
+      overlayClassName={styles.overlay}
+    >
       <section className={cx(styles.container)}>
         <Logo small disableAnimation />
 

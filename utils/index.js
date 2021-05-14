@@ -41,7 +41,7 @@ export const getHoursFromStartToEnd = (start, end) => eachHourOfInterval({ start
 export const openLinkInNewTab = url => window.open(url, '_blank').focus();
 
 export const handleKeyPress = (event, callback) => {
-  if (event.code === 'Enter' || event.code === 'Space') {
+  if (event.code === 'Enter') {
     callback();
   }
 };

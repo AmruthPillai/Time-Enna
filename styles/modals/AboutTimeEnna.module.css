@@ -1,9 +1,13 @@
+.overlay {
+  @apply md:flex md:items-center md:justify-center;
+}
+
 .modal {
-  @apply xl:w-2/3 md:mx-auto;
+  @apply lg:w-2/3 md:mx-auto md:top-auto md:bottom-auto;
 }
 
 .container {
-  @apply w-full md:w-4/5 mt-6 md:mt-0 text-sm text-justify leading-loose;
+  @apply w-full lg:w-5/6 mt-6 md:mt-0 text-sm text-justify leading-loose;
 }
 
 .container > p {

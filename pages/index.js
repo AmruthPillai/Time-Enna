@@ -40,6 +40,7 @@ const Home = () => {
             onClick={resetCursorTimestamp}
             ariaLabel="Reset to Current Time"
             tooltip="Reset to Current Time"
+            tooltipPosition="left"
           />
           <Button
             thin
@@ -48,6 +49,7 @@ const Home = () => {
             onClick={toggle24Hour}
             ariaLabel="Toggle 24 Hour Display"
             tooltip="Toggle 24 Hour Display"
+            tooltipPosition="left"
           />
           <Button
             thin
@@ -56,6 +58,7 @@ const Home = () => {
             onClick={() => setAboutModalOpen(true)}
             ariaLabel="About Time Enna"
             tooltip="About Time Enna"
+            tooltipPosition="left"
           />
         </div>
       </div>

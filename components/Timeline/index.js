@@ -51,7 +51,7 @@ const Timeline = ({ timezone }) => {
           defaultPositionX={-Math.abs(timestampToPixels(zonedTime, startDate))}
         >
           <TransformComponent ref={scrollRef}>
-            <div className="h-32 flex items-center">
+            <div className="h-28 flex items-center">
               {getHoursFromStartToEnd(startDate, endDate).map(date => (
                 <Hour key={date} date={date} currentZonedTime={currentZonedTime} />
               ))}

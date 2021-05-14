@@ -1,10 +1,19 @@
 import { endOfTomorrow, startOfYesterday } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
+import { uniq } from 'lodash';
 import { atom } from 'recoil';
 import { recoilPersist } from 'recoil-persist';
 
 const localTimezone =
   Intl.DateTimeFormat().resolvedOptions().timeZone || 'Universal Coordinated Time';
+
+const defaultTimezones = [
+  'Universal Coordinated Time',
+  localTimezone,
+  'Asia/Calcutta',
+  'Europe/Berlin',
+  'America/New_York'
+];
 
 const { persistAtom } = recoilPersist();
 
@@ -36,6 +45,6 @@ export const addTimezoneModalState = atom({
 
 export const timezonesState = atom({
   key: 'timezones',
-  default: [localTimezone],
+  default: uniq(defaultTimezones),
   effects_UNSTABLE: [persistAtom]
 });
