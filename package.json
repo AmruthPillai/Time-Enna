@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "build": "next build && next export",
+    "deploy": "npm run build && firebase deploy"
   },
   "husky": {
     "hooks": {
