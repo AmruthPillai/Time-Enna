@@ -29,8 +29,11 @@ const Hour = ({ date, currentZonedTime }) => {
     >
       {isCurrentHour && (
         <>
-          <div className={cx(styles.indicator)} style={{ left: currentHourInMinutePixels }} />
-          <span className={cx(styles.label)} style={{ left: currentHourInMinutePixels + 8 }}>
+          <div
+            className={cx(styles.indicator)}
+            style={{ left: `${currentHourInMinutePixels}px` }}
+          />
+          <span className={cx(styles.label)} style={{ left: `${currentHourInMinutePixels + 8}px` }}>
             Current Time
           </span>
         </>

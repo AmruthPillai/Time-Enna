@@ -1,21 +1,10 @@
 import { endOfTomorrow, startOfYesterday } from 'date-fns';
-import { zonedTimeToUtc } from 'date-fns-tz';
-import { uniq } from 'lodash';
 import { atom } from 'recoil';
 import { recoilPersist } from 'recoil-persist';
 
-const localTimezone =
-  Intl.DateTimeFormat().resolvedOptions().timeZone || 'Universal Coordinated Time';
-
-const defaultTimezones = [
-  'Universal Coordinated Time',
-  localTimezone,
-  'Asia/Calcutta',
-  'Europe/Berlin',
-  'America/New_York'
-];
-
-const { persistAtom } = recoilPersist();
+const { persistAtom } = recoilPersist({
+  key: 'timeenna-persist'
+});
 
 export const is24HourState = atom({
   key: 'is24Hour',
@@ -30,7 +19,7 @@ export const startEndDateState = atom({
 
 export const cursorTimestampState = atom({
   key: 'cursorTimestamp',
-  default: zonedTimeToUtc(new Date(), localTimezone)
+  default: new Date()
 });
 
 export const aboutModalOpenState = atom({
@@ -45,6 +34,6 @@ export const addTimezoneModalState = atom({
 
 export const timezonesState = atom({
   key: 'timezones',
-  default: uniq(defaultTimezones),
+  default: ['Universal Coordinated Time'],
   effects_UNSTABLE: [persistAtom]
 });

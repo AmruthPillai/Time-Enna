@@ -63,9 +63,11 @@ const Home = () => {
         </div>
       </div>
 
-      {timezones.map(timezone => (
-        <Timeline key={timezone} timezone={timezone} />
-      ))}
+      <div>
+        {timezones.map(timezone => (
+          <Timeline key={timezone} timezone={timezone} />
+        ))}
+      </div>
 
       <div className="mt-12">
         <Button icon={MdAlarmAdd} onClick={() => setAddTimezoneModalOpen(true)}>
