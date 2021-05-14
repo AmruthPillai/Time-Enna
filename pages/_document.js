@@ -52,6 +52,18 @@ class MyDocument extends Document {
           <meta property="og:site_name" content="Time Enna" />
           <meta property="og:url" content="https://timeenna.com" />
           <meta property="og:image" content="https://timeenna.com/icons/logo-256x256.png" />
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG95F11NJH" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-MG95F11NJH');
+              `
+            }}
+          />
         </Head>
         <body>
           <Main />
