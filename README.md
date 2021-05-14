@@ -22,6 +22,5 @@ Time Enna is an app to help you look up the time across multiple timezones, a si
 
 Thanks to [@aksh1251](https://github.com/aksh1251) for the pair programming support while building this project.  
 Built using NextJS, Recoil and a bunch of other amazing libraries.  
-Hosted on Vercel Edge Network.  
 
 Made with Love ❤️ 
